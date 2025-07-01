@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienestar Emocional - Fundación Carlos Slim</title>
+    
+    <!-- Google Fonts: Poppins para títulos y Lato para texto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+    <style>
+        /* --- ESTILOS GENERALES Y RESET --- */
+        :root {
+            --color-primario: #005A9C; /* Azul institucional, ajustable */
+            --color-primario-hover: #004170;
+            --color-texto: #333;
+            --color-texto-claro: #555;
+            --color-fondo: #ffffff;
+            --color-fondo-alterno: #f8f9fa;
+            --color-fondo-oscuro: #343a40;
+            --fuente-titulo: 'Poppins', sans-serif;
+            --fuente-texto: 'Lato', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fuente-texto);
+            color: var(--color-texto);
+            background-color: var(--color-fondo);
+            line-height: 1.6;
+        }
+
+        /* --- SECCIONES Y CONTENEDORES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--fuente-titulo);
+            font-weight: 600;
+            color: var(--color-texto);
+        }
+        
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+        }
+
+        /* --- HERO SECTION (ENCABEZADO PRINCIPAL) --- */
+        .hero-section {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url('https://fsvc.capacitateparaelempleo.org/CapacitateFS/storage/5b4fba7e-56d2-4520-888a-9dcae09862be.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 0 20px;
+        }
+        
+        .hero-logo {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            font-family: var(--fuente-titulo);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--color-primario);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: var(--fuente-titulo);
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--color-primario-hover);
+            transform: translateY(-3px);
+        }
+        
+        /* --- INTRO SECTION --- */
+        .intro-section {
+            background-color: var(--color-fondo-alterno);
+        }
+        
+        .intro-section .container {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .intro-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        
+        .intro-section p {
+            color: var(--color-texto-claro);
+            font-size: 1.1rem;
+        }
+
+        /* --- RESOURCES SECTION (TARJETAS) --- */
+        .resources-section {
+            background-color: var(--color-fondo);
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            padding: 40px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+        }
+
+        .card .icon {
+            font-size: 3.5rem;
+            color: var(--color-primario);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--color-texto-claro);
+            margin-bottom: 25px;
+        }
+        
+        .card-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--color-primario);
+            padding: 10px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: var(--fuente-titulo);
+            font-weight: 600;
+            border: 2px solid var(--color-primario);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .card-button:hover {
+            background-color: var(--color-primario);
+            color: white;
+        }
+
+        /* --- QUOTE SECTION --- */
+        .quote-section {
+            background-color: var(--color-primario);
+            color: white;
+        }
+        
+        .quote-section blockquote {
+            font-family: var(--fuente-titulo);
+            font-size: 1.8rem;
+            font-style: italic;
+            font-weight: 600;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            border: none;
+        }
+        
+        /* --- FOOTER --- */
+        .site-footer {
+            background-color: var(--color-fondo-oscuro);
+            color: #adb5bd;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .site-footer p {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--color-primario);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (min-width: 768px) {
+            .cards-container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .hero-content h1 {
+                font-size: 3.8rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            h2.section-title {
+                font-size: 2rem;
+            }
+            .hero-logo {
+                font-size: 1rem;
+                top: 20px;
+                left: 20px;
+            }
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- =======================
+    HERO SECTION
+    ======================== -->
+    <header class="hero-section">
+        <a href="#" class="hero-logo">
+            <img src="https://fsvc.capacitateparaelempleo.org/CapacitateFS/storage/f4d36fe0-caf0-48a4-902c-7fde6ce17c0b.png" alt="Logo de Fundación Carlos Slim">
+        </a>
+
+        <div class="hero-content">
+            <h1>Tu bienestar emocional empieza aquí.</h1>
+            <p>Fundación Carlos Slim te brinda acceso gratuito a cursos, artículos, videos, infografías  y guías para cultivar tu equilibrio interior.</p>
+            <a href="#resources" class="cta-button">Explorar recursos</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- =======================
+        INTRO SECTION
+        ======================== -->
+        <section class="intro-section">
+            <div class="container">
+                <h2>Comprometidos con tu salud integral</h2>
+                <p>En Fundación Carlos Slim, creemos que la salud emocional es un pilar fundamental para una vida plena. Por ello, hemos reunido en un solo lugar nuestros mejores recursos, desarrollados por expertos, para acompañarte en tu camino hacia el autoconocimiento y el bienestar.</p>
+            </div>
+        </section>
+
+        <!-- =======================
+        RESOURCES SECTION
+        ======================== -->
+        <section id="resources" class="resources-section">
+            <div class="container">
+                <h2 class="section-title">Encuentra lo que necesitas</h2>
+                <div class="cards-container">
+                    
+                    <!-- Card 1: Cursos -->
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h3>Salud emocional</h3>
+                        <p>Accede a recursos y prácticas orientadas al autoconocimiento y manejo del estrés, así como a la exploración de las diferentes dimensiones que conforman al ser humano para lograr un equilibrio y desarrollo armónico.</p>
+                        <a href="https://aprende.org/categoria/salud-emocional" target="_blank" rel="noopener noreferrer" class="card-button">Ver</a>
+                    </div>
+
+                    <!-- Card 2: Artículos -->
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-book-open"></i></div>
+                        <h3>Salud mental</h3>
+                        <p>Explora nuestra biblioteca de artículos y consejos prácticos sobre salud mental, relaciones y hábitos saludables, validados por profesionales.</p>
+                        <a href="https://www.clikisalud.net/temas-salud/salud-mental/" target="_blank" rel="noopener noreferrer" class="card-button">Ver</a>
+                    </div>
+                    
+                    <!-- Card 3: Crecimiento Integral -->
+                    <div class="card">
+                        <div class="icon"><i class="fas fa-seedling"></i></div>
+                        <h3>Crecimiento integral</h3>
+                        <p>Tu mente es parte de un todo. Descubre recursos para tu desarrollo personal, profesional y social que complementan tu bienestar emocional.</p>
+                        <a href="https://aprende.org/area/formacion-humana" target="_blank" rel="noopener noreferrer" class="card-button">Ver</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- =======================
+        QUOTE SECTION
+        ======================== -->
+        <section class="quote-section">
+            <div class="container">
+                <blockquote>
+                    "Cuidar de tu salud emocional no es un lujo, es la base para construir la vida que deseas".
+                </blockquote>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- =======================
+    FOOTER
+    ======================== -->
+    <footer class="site-footer">
+        <div class="container">
+            <p><strong>Fundación Carlos Slim</strong></p>
+            <p>© 2025 Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="https://educacioninicial.mx/aviso-de-privacidad">Aviso de Privacidad</a>
+               
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
